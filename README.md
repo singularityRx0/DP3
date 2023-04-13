@@ -24,3 +24,7 @@
 - [Google Volley Android](https://www.codeseasy.com/google-volley-android/)
 
 **Android 8.0 Oreo is the app OS version**
+
+## SETTING UP XAMPP
+- As per instructions do not save XAMPP folder in the `C:\progranfiles` local drive. If possible save it in its own directory.
+- After installing make a shortcut of XAMPP on the desktop. Set the shortcut permission to always **admin**
