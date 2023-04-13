@@ -13,5 +13,5 @@
 
 ### TOOLS
 
-TOOLS | VERSION
-[XAMPP](https://www.apachefriends.org/download.html) | 8.2.4
+| TOOLS | VERSION |
+| [XAMPP](https://www.apachefriends.org/download.html) | 8.2.4 |
