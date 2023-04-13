@@ -22,3 +22,5 @@
 ### LIBRARIES
 - [QRGenerator](https://github.com/androidmads/QRGenerator)
 - [Google Volley Android](https://www.codeseasy.com/google-volley-android/)
+
+Android 8.0 Oreo is the app OS version
