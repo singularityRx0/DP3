@@ -10,4 +10,4 @@
 - [ ] Yay All Finish :tada:
 
 ## TOOLS AND LIBRARIES REQUIRED
-[XAMPP](https://www.apachefriends.org/download.html) 
+[XAMPP](https://www.apachefriends.org/download.html) Version 8.2.4 was use for this app development
