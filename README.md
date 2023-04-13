@@ -16,3 +16,5 @@
 | TOOLS | VERSION |
 | --- | --- |
 | [XAMPP](https://www.apachefriends.org/download.html) | 8.2.4 |
+| [Android Studio](https://developer.android.com/studio) | Electric Eel 2022.1.1 |
+| [Visual Studio Code]https://code.visualstudio.com/download) | 1.77.2|
