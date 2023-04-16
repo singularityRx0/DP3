@@ -3,7 +3,7 @@
 ## TASK LIST
 - [x] Connect app to server
 - [x] Connect MySQL Database to server and app
-- [ ] API development for app actions
+- [x] API development for app actions
 - [ ] App Login Module 
 - [ ] App Register Resident Module
 - [ ] App Create QR Module
