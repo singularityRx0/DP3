@@ -33,3 +33,4 @@
 - As per instructions do not save XAMPP folder in the `C:\progranfiles` local drive. If possible save it in its own directory.
 - After installing make a shortcut of XAMPP on the desktop. Set the shortcut permission to always **admin**
 - Save your PHP scripts in the **hdocs** folder in your xampp directory
+- Useful links to help: [link1](https://people.utm.my/shaharil/access-pc-localhost-xampp-server-from-mobile/), [link2](https://www.austincc.edu/rmartin6/coursecontent/inew2338/07-XAMPPSetup.pdf)
