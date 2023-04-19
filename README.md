@@ -2,6 +2,7 @@
 ## Use the files avaliable in `AppPrototype`
 - Copy paste the `AndroidManifest.xml`, `build.gredle (Module:app)`, and `settings.gradle` into your project directory. They contain the settings and libraries used.
 - Change database setting in `1_connectDB.php`
+- Import `appprototype.sql` for mysql table settings
 
 ## TASK LIST
 - [x] Connect app to server
