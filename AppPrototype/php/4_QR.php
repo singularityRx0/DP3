@@ -4,6 +4,9 @@
 
     if (!empty($_POST['nr_no']) && !empty($_POST['nr_name']) && !empty($_POST['nr_ic']) && !empty($_POST['nr_phone'])) {
 
+        //generated_by
+        $gen_by = $_POST['gen_by'];
+
         //nr data
         $nr_no = $_POST['nr_no'];
         $nr_name = $_POST['nr_name'];
@@ -15,47 +18,39 @@
         $end_date = $_POST['end_date'];
 
         //qr data
-        $QR = $_POST['QR'];
         $QR_id = $_POST['QR_id'];
-
-        //generated_by
-        $gen_by = $_POST['gen_by'];
 
         $counter = 0;
 
         $json = array();
 
-        $sql = "insert into QR_data (gen_by, nr_no, nr_name, nr_ic, nr_phone, start_date, end_date, QR , QR_id) values 
+        $sql = "insert into qr_data (gen_by, nr_no, nr_name, nr_ic, nr_phone, start_date, end_date, QR_id) values 
                 ('".$gen_by."', '".$nr_no."', '".$nr_name."', '".$nr_ic."', '".$nr_phone."', 
-                '".$start_date."', '".$end_date."', '".$QR."', '".$QR_id."') ";
+                '".$start_date."', '".$end_date."', '".$QR_id."') ";
 
         //if($conn->query)
 
         if($conn->query($sql)){
 
-            $slq_qr_validity = "insert into QR_validity (QR_id, QR, start_date,end_date, counter) values
-                                ('".$QR_id."', , '".$QR."', '".$start_date."', '".$end_date."', '".$counter."' ) ";
+            $sql_qr_validity = "insert into qr_validity (QR_id, start_date,end_date, counter) values
+                                ('".$QR_id."', '".$start_date."', '".$end_date."', '".$counter."' ) ";
 
-            if($conn->query($slq_qr_validity)) {
-                $json = array("status" => "QR success", "message" => "QR validity data insert successfully");
+            if($conn->query($sql_qr_validity)) {
+                echo "success";
             }
             else{
-                $json = array("status" => "QR failed", "message" => "Failed to insert into QR_validity");
+                echo "failed";
             }
 
         }
         else {
-            $json = array("status" => "SQL insert error", "message" => "");    
+            echo "failed";
         }
 
 
     }
     else
-    $json = array("status" => "failed", "message" => "All fields are required"); 
-
-
-
-    echo json_encode($json, flags:JSON_PRETTY_PRINT);
+    echo "failed";
 
     $conn->close();
 ?>
