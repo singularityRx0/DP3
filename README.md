@@ -4,9 +4,10 @@
 - [x] Connect app to server
 - [x] Connect MySQL Database to server and app
 - [x] API development for app actions
-- [ ] App Login Module 
-- [ ] App Register Resident Module
-- [ ] App Create QR Module
+- [x] App Login Module 
+- [x] App Register Resident Module
+- [x] App Create QR Module
+- [ ] Microcontroller QR code decoder
 - [ ] Yay All Finish :tada:
 
 ## TOOLS AND LIBRARIES REQUIRED
