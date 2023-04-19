@@ -1,4 +1,5 @@
 # DP3
+## Use the files avaliable in `AppPrototype`
 
 ## TASK LIST
 - [x] Connect app to server
@@ -29,3 +30,4 @@
 ## SETTING UP XAMPP
 - As per instructions do not save XAMPP folder in the `C:\progranfiles` local drive. If possible save it in its own directory.
 - After installing make a shortcut of XAMPP on the desktop. Set the shortcut permission to always **admin**
+- Save your PHP scripts in the **hdocs** folder in your xampp directory
