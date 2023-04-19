@@ -18,7 +18,7 @@
         $sql = "insert into user_data (name,email,ic_num,password,permission) values 
                 ('".$name."', '".$email."', '".$ic_num."', '".$password."', '".$permission."') ";
 
-        if(mysqli_query($conn,$sql)==true)
+        if($conn->query($sql))
         {
             echo "success";
         }
