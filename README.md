@@ -1,5 +1,6 @@
 # DP3
 ## Use the files avaliable in `AppPrototype`
+- Copy paste the `AndroidManifest.xml`, `build.gredle (Module:app)`, and `settings.gradle` into your project directory
 
 ## TASK LIST
 - [x] Connect app to server
