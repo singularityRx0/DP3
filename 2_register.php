@@ -7,15 +7,15 @@
 
         $name = $_POST['name'];
         //$username = $_POST['username'];
-        $email = $S_POST['email'];
-        $ic_num = $S_POST['ic_num'];
+        $email = $_POST['email'];
+        $ic_num = $_POST['ic_num'];
         $password = password_hash($S_POST['password'], algo:PASSWORD_DEFAULT);
         $permission = 0;
 
         //$sql = "insert into user_data (name,username,email,ic.no,password,permission) values 
                 //('".$name."', '".$username."', '".$email."', '".$ic_num."', '".$password."', '".$permission."') ";
 
-        $sql = "insert into user_data (name,email,ic.no,password,permission) values 
+        $sql = "insert into user_data (name,email,ic_num,password,permission) values 
                 ('".$name."', '".$email."', '".$ic_num."', '".$password."', '".$permission."') ";
 
         if(mysqli_query($conn,$sql)==true)
