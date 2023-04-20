@@ -4,7 +4,7 @@
     require '1_connectDB.php';
 
     //device key value
-    $device_key_value = "";
+    $device_key_value = "123";
 
 
     if($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -28,7 +28,7 @@
                 $QRend_time = date_create($row['end_date']);
 
                 //remaining time
-                $remain_time = date_diff($current_time,$QRend_time);
+                $remain_time = date_diff($QRend_time,$current_time);
                 $remain_day = (int)$remain_time->format("%R%a");
                 $remain_hour = (int)$remain_time->format("%R%h");
                 $remain_min = (int)$remain_time->format("%R%i");
@@ -41,20 +41,28 @@
                         $counter = 1;
                         $sql_update = "update  QR_validity set counter = '".$counter."' where QR_id = '".$QR_id."' and start_date = '".$start_date."' and end_date = '".$end_date."' ";
                         $conn->query($sql_update);
+                        //entry allowed
                         echo 1;
                     }
                     elseif ($row['counter'] == 1) {
+                        //entry denied
                         echo 0;
                     }
                 }
                 else
                 //QR code expired
-                echo 0;
+                echo 2;
             }
+            else
+            //QR code does not exist
+            echo 3;
         }
-        else 
-        echo "Device id not the same";
+        else
+        //device id not the same 
+        echo 4;
     }
+    else
+    echo "Not post method";
 
     $conn->close();
 
