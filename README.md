@@ -3,8 +3,8 @@
 - Copy paste the `AndroidManifest.xml`, `build.gredle (Module:app)`, and `settings.gradle` into your project directory. They contain the settings and libraries used
 - Change database setting in `1_connectDB.php`
 - Import `appprototype.sql` for mysql table settings
-- Change the `url` in the `.java` files to your ip exp: http://192.0.1.102/a/b where a is your php folder name in the hdocs and b your php script name
-- To find your ipconfig, open command prompt and type ipconfig. Its your ipv4 addres
+- Change the `url` in the `.java` files to your ip exp: http://192.0.1.102/a/b where ``a is your php folder name in the hdocs and `b` your php script name
+- To find your ipconfig, open command prompt and type ipconfig. Its your ipv4 address
 
 ## TASK LIST
 - [x] Connect app to server
