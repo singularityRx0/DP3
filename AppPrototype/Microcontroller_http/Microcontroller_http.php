@@ -66,7 +66,7 @@
 
     $conn->close();
 
-
+    //ensure recived data is utf-8 encoded
     function test_input($data) {
         $data = trim($data);
         $data = stripslashes($data);
