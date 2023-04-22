@@ -18,7 +18,7 @@
 - [x] App Login Module 
 - [x] App Register Resident Module
 - [x] App Create QR Module
-- [ ] Microcontroller QR code decoder
+- [ ] Microcontroller QR code/decoder
 - [ ] Yay All Finish :tada:
 
 ## TOOLS AND LIBRARIES REQUIRED
