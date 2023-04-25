@@ -1,5 +1,3 @@
-
-
 #include <ESP8266WiFi.h>
 #include <ESP8266HTTPClient.h>
 #include <WiFiClientSecureBearSSL.h>
@@ -54,24 +52,24 @@ void loop() {
       Serial.print("HTTP Response code: ");
       Serial.println(httpResponseCode);
       String payload = http.getString();
+      int payload_int = payload.toInt();
       Serial.println("received payload:\n<<");
       Serial.println(payload);
-      if (payload == "1") {
-        Serial.print("Entry Allowed");
-       }
-      else if (payload == "0") {
+      switch (payload_int) {
+        case 0:
         Serial.print("Entry Denied");
-      }
-      else if(payload == "2") {
-        Serial.print("QR Code Expired");
-      }
-      else if(payload == "3") {
+        break;
+        case 1:
+        Serial.print("Entry Allowed");
+        break;
+        case 3:
         Serial.print("QR Code Does Not Exist");
+        break;
+        case 4:
+        Serial.print("Device ID not the same");
+        default:
+        break;
       }
-      else if(payload == "4") {
-        Serial.print("Device ID Not The Same");
-      }
-    }
     else {
       Serial.print("Error code: ");
       Serial.println(httpResponseCode);
