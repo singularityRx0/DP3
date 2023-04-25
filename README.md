@@ -50,3 +50,11 @@
 <img align="left" src="https://user-images.githubusercontent.com/94662590/234260879-3d4d29e5-9ba3-4745-8250-fbdbf2cf89ad.png" width=20% height=20%>
 
 <img align="center" src="https://user-images.githubusercontent.com/94662590/234262954-85307232-c79b-428f-8ed1-e5059548c5e7.png" width=20% height=20%>
+
+### MAIN MENU
+<img align="left" src="https://user-images.githubusercontent.com/94662590/234264574-786a394e-5fce-4852-a290-98192cf79626.png" width=20% height=20%>
+
+### GENERATE QR CODE
+<img align="left" src="https://user-images.githubusercontent.com/94662590/234264766-c51c0901-d3c5-4811-aefc-fc1a1f8e4f7b.png" width=20% height=20%>
+<img align="center" src="https://user-images.githubusercontent.com/94662590/234265002-fe10e084-3810-4099-a95d-89dd4ffdf0dc.png" width=20% height=20%>
+<img align="right" src="https://user-images.githubusercontent.com/94662590/234265412-4eb10fe7-a227-431e-a3aa-e0da91f26f45.png" width=20% height=20%>
