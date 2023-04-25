@@ -47,4 +47,4 @@
 
 ## WHAT IT LOOKS LIKE NOW
 ### Main Page
-<img src="https://user-images.githubusercontent.com/94662590/234260879-3d4d29e5-9ba3-4745-8250-fbdbf2cf89ad.png" width=50% height=50%>
+<img src="https://user-images.githubusercontent.com/94662590/234260879-3d4d29e5-9ba3-4745-8250-fbdbf2cf89ad.png" width=20% height=20%>
