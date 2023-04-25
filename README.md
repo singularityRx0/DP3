@@ -47,4 +47,4 @@
 
 ## WHAT IT LOOKS LIKE NOW
 ### LOGIN PAGE
-<img src="https://user-images.githubusercontent.com/94662590/234260879-3d4d29e5-9ba3-4745-8250-fbdbf2cf89ad.png" title="Login" width=20% height=20%>
+<img alt="Front Page" src="https://user-images.githubusercontent.com/94662590/234260879-3d4d29e5-9ba3-4745-8250-fbdbf2cf89ad.png" title="Login" width=20% height=20%>
