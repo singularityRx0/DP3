@@ -1,6 +1,6 @@
 <?php
 //retrieve data from microcontroller check with mysql 
-
+    date_default_timezone_set("Asia/Kuala_Lumpur");
     require '1_connectDB.php';
 
     //device key value
@@ -24,11 +24,13 @@
                 //time variable
                 //sever time
                 $current_time = date_create(date("Y-m-d H:i:s"));
+                $temp_date = $current_time->format("Y-m-d H:i:s");
+                //$current_time_database = $current_time->format("Y-m-d H:i:s");
                 //QR end time
                 $QRend_time = date_create($row['end_date']);
 
                 //remaining time
-                $remain_time = date_diff($QRend_time,$current_time);
+                $remain_time = date_diff($current_time,$QRend_time);
                 $remain_day = (int)$remain_time->format("%R%a");
                 $remain_hour = (int)$remain_time->format("%R%h");
                 $remain_min = (int)$remain_time->format("%R%i");
@@ -39,7 +41,9 @@
                     // if qr counter is 1 do not allow entry(0)
                     if($row['counter'] == 0) {
                         $counter = 1;
-                        $sql_update = "update  QR_validity set counter = '".$counter."' where QR_id = '".$QR_id."' and start_date = '".$start_date."' and end_date = '".$end_date."' ";
+                        $status = "Useed";
+                        $sql_update = "update qr_validity set counter = '".$counter."' , status = '".$status."' , used_by = '".$temp_date."'
+                        where QR_id = '".$QR_id."' and start_date = '".$start_date."' and end_date = '".$end_date."' ";
                         $conn->query($sql_update);
                         //entry allowed
                         echo 1;
@@ -49,9 +53,14 @@
                         echo 0;
                     }
                 }
-                else
+                elseif ($remain_day < 0 && $remain_hour < 0 && $remain_min < 0 && $remain_sec < 0) {
                 //QR code expired
+                $status = "Expired";
+                $sql_update = "update qr_validity set status = '".$status."' 
+                where QR_id = '".$QR_id."' and start_date = '".$start_date."' and end_date = '".$end_date."' ";
+                $conn->query($sql_update);
                 echo 2;
+                }
             }
             else
             //QR code does not exist
@@ -66,7 +75,7 @@
 
     $conn->close();
 
-    //ensure recived data is utf-8 encoded
+
     function test_input($data) {
         $data = trim($data);
         $data = stripslashes($data);
