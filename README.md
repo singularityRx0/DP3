@@ -53,7 +53,7 @@
 
 ### MAIN MENU
 
-<img align="left" src="https://user-images.githubusercontent.com/94662590/234264574-786a394e-5fce-4852-a290-98192cf79626.png" width=20% height=20%>
+<img src="https://user-images.githubusercontent.com/94662590/234264574-786a394e-5fce-4852-a290-98192cf79626.png" width=20% height=20%>
 
 
 ### GENERATE QR CODE
