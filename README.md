@@ -45,16 +45,14 @@
 - Save your PHP scripts in the **hdocs** folder in your xampp directory
 - Useful links to help: [link1](https://people.utm.my/shaharil/access-pc-localhost-xampp-server-from-mobile/), [link2](https://www.austincc.edu/rmartin6/coursecontent/inew2338/07-XAMPPSetup.pdf), [link3](https://www.simplilearn.com/tutorials/php-tutorial/php-using-xampp#:~:text=Before%20running%20a%20PHP%20script,web%20pages%20will%20be%20stored.)
 
-## WHAT IT LOOKS LIKE NOW
+## APP GALLERY 
 ### LOGIN PAGE
 <img align="left" src="https://user-images.githubusercontent.com/94662590/234260879-3d4d29e5-9ba3-4745-8250-fbdbf2cf89ad.png" width=20% height=20%>
 
 <img align="center" src="https://user-images.githubusercontent.com/94662590/234262954-85307232-c79b-428f-8ed1-e5059548c5e7.png" width=20% height=20%>
 
 ### MAIN MENU
-
 <img src="https://user-images.githubusercontent.com/94662590/234264574-786a394e-5fce-4852-a290-98192cf79626.png" width=20% height=20%>
-
 
 ### GENERATE QR CODE
 <img align="left" src="https://user-images.githubusercontent.com/94662590/234264766-c51c0901-d3c5-4811-aefc-fc1a1f8e4f7b.png" width=20% height=20%>
