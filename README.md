@@ -46,5 +46,5 @@
 - Useful links to help: [link1](https://people.utm.my/shaharil/access-pc-localhost-xampp-server-from-mobile/), [link2](https://www.austincc.edu/rmartin6/coursecontent/inew2338/07-XAMPPSetup.pdf), [link3](https://www.simplilearn.com/tutorials/php-tutorial/php-using-xampp#:~:text=Before%20running%20a%20PHP%20script,web%20pages%20will%20be%20stored.)
 
 ## WHAT IT LOOKS LIKE NOW
-### Main Page
-<img src="https://user-images.githubusercontent.com/94662590/234260879-3d4d29e5-9ba3-4745-8250-fbdbf2cf89ad.png" width=20% height=20%>
+### LOGIN PAGE
+<img src="https://user-images.githubusercontent.com/94662590/234260879-3d4d29e5-9ba3-4745-8250-fbdbf2cf89ad.png" title="Login" width=20% height=20%>
