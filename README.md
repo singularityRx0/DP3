@@ -3,6 +3,8 @@
 - Residents must first register their account on the App before allowing visitors.
 - QR code generated is then saved in MySQL database.
 - QR code will expire after 24hours and it is only single use.
+- Visitors will show the generated QR code to a ESP32-cam microcontroller to be decoded
+- ESP32-cam microcontroller will parse the QR data and serial send it to a esp8266 connected to the API and database to determine validity.
 
 ## Use the files avaliable in `AppPrototype`
 - Copy paste the `AndroidManifest.xml`, `build.gredle (Module:app)`, and `settings.gradle` into your project directory. They contain the settings and libraries used
