@@ -41,8 +41,8 @@ void loop() {
     http.begin(client, serverName);
     http.addHeader("Content-Type", "application/x-www-form-urlencoded");
     
-    String httpRequestData = "device_key=" + device_key + "&QR_id=" + "4lj4dtsnuf2d"
-                          + "&start_date=" + "2023-04-19 22:51:08" + "&end_date=" + "2023-04-27 22:51:08";
+    String httpRequestData = "device_key=" + device_key + "&QR_id=" + QR_id
+                          + "&start_date=" + start_date + "&end_date=" + end_date;
     Serial.print("httpRequestData: ");
     Serial.println(httpRequestData);
 
