@@ -31,6 +31,10 @@ void setup() {
 void loop() {
   //Check WiFi connection status
   if(WiFi.status()== WL_CONNECTED){
+
+    string QR_id;
+    string start_date;
+    string end_date,
     
     
     //Initialize client library
