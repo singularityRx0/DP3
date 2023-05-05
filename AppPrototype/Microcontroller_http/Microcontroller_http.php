@@ -41,7 +41,7 @@
                     // if qr counter is 1 do not allow entry(0)
                     if($row['counter'] == 0) {
                         $counter = 1;
-                        $status = "Useed";
+                        $status = "Used";
                         $sql_update = "update qr_validity set counter = '".$counter."' , status = '".$status."' , used_by = '".$temp_date."'
                         where QR_id = '".$QR_id."' and start_date = '".$start_date."' and end_date = '".$end_date."' ";
                         $conn->query($sql_update);
