@@ -20,7 +20,10 @@
 - [x] App Login Module 
 - [x] App Register Resident Module
 - [x] App Create QR Module
+- [x] Microcontroller PHP Validation
 - [ ] Microcontroller QR code/decoder
+- [ ] RFID PHP Validation
+- [ ] RFID Module
 - [ ] Yay All Finish :tada:
 
 ## TOOLS AND LIBRARIES REQUIRED
