@@ -40,6 +40,11 @@
 - [QRGenerator](https://github.com/androidmads/QRGenerator)
 - [Google Volley Android](https://www.codeseasy.com/google-volley-android/)
 
+### ARDUINO LIBRARIES USED
+- [ezBuzzer by ArduinoGetStarted.com](https://github.com/ArduinoGetStarted/buzzer)
+- [ArduinoJson by Benoit Blanchon](https://arduinojson.org/v6/assistant/#/step1)
+- [ESP32QRCodeReader](https://www.makeuseof.com/scanning-qr-codes-with-esp32-cam/)
+
 **Android 8.0 Oreo is the app OS version**
 
 ## SETTING UP XAMPP
