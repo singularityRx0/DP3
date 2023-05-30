@@ -44,9 +44,15 @@
                         $status = "Used";
                         $sql_update = "update qr_validity set counter = '".$counter."' , status = '".$status."' , used_by = '".$temp_date."'
                         where QR_id = '".$QR_id."' and start_date = '".$start_date."' and end_date = '".$end_date."' ";
-                        $conn->query($sql_update);
-                        //entry allowed
-                        echo 1;
+                        if ($conn->query($sql_update)){
+                            //entry allowed
+                            echo 1;
+                            $sql_qr_log = " insert into qr_log (QR_id, start_date, end_date) values
+                            ('".$QR_id."','".$start_date."','".$end_date."') ";
+                            $conn->query($sql_qr_log);
+                        }
+                        
+                        
                     }
                     elseif ($row['counter'] == 1) {
                         //entry denied
