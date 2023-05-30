@@ -41,7 +41,7 @@
                     // if qr counter is 1 do not allow entry(0)
                     if($row['counter'] == 0) {
                         $counter = 1;
-                        $status = "Used";
+                        $status = "Used-Entry";
                         $sql_update = "update qr_validity set counter = '".$counter."' , status = '".$status."' , used_by = '".$temp_date."'
                         where QR_id = '".$QR_id."' and start_date = '".$start_date."' and end_date = '".$end_date."' ";
                         if ($conn->query($sql_update)){
@@ -51,13 +51,20 @@
                             ('".$QR_id."','".$start_date."','".$end_date."') ";
                             $conn->query($sql_qr_log);
                         }
-                        
-                        
                     }
-                    elseif ($row['counter'] == 1) {
+                    elseif ($row['counter'] == 1 && $row['status'] != "Used-Entry") {
                         //entry denied
                         echo 0;
                     }
+                    elseif ($row['counter'] == 1 && $row['status'] == "Used-Entry") {
+                        //Allow exit
+                        echo 5;
+                        $status = "Used-Exit";
+                        $sql_update = "update qr_validity set status = '".$status."' , used_by = '".$temp_date."'
+                        where QR_id = '".$QR_id."' and start_date = '".$start_date."' and end_date = '".$end_date."' ";
+                        $conn->query($sql_update);
+                    }
+                    
                 }
                 elseif ($remain_day < 0 && $remain_hour < 0 && $remain_min < 0 && $remain_sec < 0) {
                 //QR code expired
