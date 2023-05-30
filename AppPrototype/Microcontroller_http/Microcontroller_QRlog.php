@@ -16,40 +16,35 @@
             $start_date = test_input($_POST['start_date']);
             $end_date = test_input($_POST['end_date']);
 
-            $sql = " insert into qr_log (QR_id, start_date, end_date) values
-            ('".$QR_id."','".$start_date."','".$end_date."') ";
 
-            if ($conn->query($sql)) {
+            $sql_lookup = "select * from qr_log where QR_id = '".$QR_id."' and start_date = '".$start_date."' and end_date = '".$end_date."' ";
+            $res = $conn->query($sql_lookup);
 
-                $sql_lookup = "select * from qr_log where QR_id = '".$QR_id."' and start_date = '".$start_date."' and end_date = '".$end_date."' ";
-                $res = $conn->query($sql_lookup);
+            if($res->num_rows != 0) {
+                $row = $res->fetch_assoc();
 
-                if($res->num_rows != 0) {
-                    $row = $res->fetch_assoc();
-
-                    if($row['entry_date'] == "0000-00-00 00:00:00" && $row['exit_date'] == "0000-00-00 00:00:00")
-                    {
-                        $sql_qr_log = "update qr_log set entry_date = '".$temp_date."' 
-                        where QR_id = '".$QR_id."' and start_date = '".$start_date."' and end_date = '".$end_date."' ";
-                        if ($conn->query($sql_qr_log)) {
-                            echo 1;
-                        }
-
+                if($row['entry_date'] == "0000-00-00 00:00:00" && $row['exit_date'] == "0000-00-00 00:00:00")
+                {
+                    $sql_qr_log = "update qr_log set entry_date = '".$temp_date."' 
+                    where QR_id = '".$QR_id."' and start_date = '".$start_date."' and end_date = '".$end_date."' ";
+                    if ($conn->query($sql_qr_log)) {
+                        echo 1;
                     }
 
-                    elseif($row['entry_date'] != "0000-00-00 00:00:00" && $row['exit_date'] == "0000-00-00 00:00:00")
-                    {
-                        $sql_qr_log = "update qr_log set exit_date = '".$temp_date."' 
-                        where QR_id = '".$QR_id."' and start_date = '".$start_date."' and end_date = '".$end_date."' ";
-                        if ($conn->query($sql_qr_log)) {
-                            echo 2;
-                        }
+                }
 
+                elseif($row['entry_date'] != "0000-00-00 00:00:00" && $row['exit_date'] == "0000-00-00 00:00:00")
+                {
+                    $sql_qr_log = "update qr_log set exit_date = '".$temp_date."' 
+                    where QR_id = '".$QR_id."' and start_date = '".$start_date."' and end_date = '".$end_date."' ";
+                    if ($conn->query($sql_qr_log)) {
+                        echo 2;
                     }
-                    elseif($row['entry_date'] != "0000-00-00 00:00:00" && $row['exit_date'] != "0000-00-00 00:00:00") {
-                        echo 3;
-                        $conn->close();
-                    }
+
+                }
+                elseif($row['entry_date'] != "0000-00-00 00:00:00" && $row['exit_date'] != "0000-00-00 00:00:00") {
+                    echo 3;
+                    $conn->close();
                 }
             }
 
