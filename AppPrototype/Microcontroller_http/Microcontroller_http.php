@@ -73,6 +73,16 @@
                 where QR_id = '".$QR_id."' and start_date = '".$start_date."' and end_date = '".$end_date."' ";
                 $conn->query($sql_update);
                 echo 2;
+                    
+                    if ($row['counter'] == 1 && $row['status'] == "Used-Entry"){
+                        //Allow exit
+                        echo 5;
+                        $status = "Used-Exit";
+                        $sql_update = "update qr_validity set status = '".$status."' , used_by = '".$temp_date."'
+                        where QR_id = '".$QR_id."' and start_date = '".$start_date."' and end_date = '".$end_date."' ";
+                        $conn->query($sql_update);
+                    }                 
+                    
                 }
             }
             else
