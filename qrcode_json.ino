@@ -10,9 +10,9 @@ uint8_t broadcastAddress[] = {0x58, 0xBF, 0x25, 0xDA, 0xFC, 0x83};
 // Structure example to send data
 // Must match the receiver structure
 typedef struct struct_message {
-  const char* QR_id;
-  const char* start_date;
-  const char* end_date;
+  char QR_id[48];
+  char start_date[48];
+  char end_date[48];
 } struct_message;
 
 // Create a struct_message called myData
@@ -86,9 +86,12 @@ void loop() {
         Serial.println(error.c_str());
         return;
       }
-      myData.QR_id = doc["QR_id"];            // "3nn0r5nm0ich"
-      myData.start_date = doc["start_date"];  // "2023-04-25 19:37:39"
-      myData.end_date = doc["end_date"];      // "2023-04-26 19:37:39"
+      const char* All = doc["QR_id"];// "3nn0r5nm0ich"
+      strncpy(myData.QR_id, All, sizeof(myData.QR_id));
+      const char* sd = doc["start_date"];  // "2023-04-25 19:37:39"
+      strncpy(myData.start_date, sd, sizeof(myData.start_date));
+      const char* ed =doc["end_date"];      // "2023-04-26 19:37:39"
+      strncpy(myData.end_date, ed, sizeof(myData.end_date));
       Serial.println(myData.QR_id);
       esp_err_t result = esp_now_send(broadcastAddress, (uint8_t *) &myData, sizeof(myData));
       if (result == ESP_OK) {
