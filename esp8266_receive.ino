@@ -23,7 +23,6 @@ void OnDataRecv(uint8_t * mac, uint8_t *incomingData, uint8_t len) {
   Serial.println(myData.start_date);
   Serial.print("End date: ");
   Serial.println(myData.end_date);
-  Serial.println();
 }
  
 void setup() {
