@@ -114,6 +114,7 @@ void loop() {
      Serial.print("Device ID Not The Same");
      break;
     case 5:
+     Serial.print("Exit Allowed");
      break     
    }
   }
