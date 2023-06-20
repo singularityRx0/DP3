@@ -1,10 +1,6 @@
-#include <ps5Controller.h>
 #include "Arduino.h"
-#include <EEPROM.h>
-#include <ICM_20948.h>
-#include <Robocon2023.h>
 #include <ESP32Servo.h>
-#include <VescUart.h>
+
 //#include <LiquidCrystal_I2C.h>
 
 #define SERVO_1_PIN  12
@@ -64,86 +60,14 @@ int frequency_actuator     = 500;
 int resolution_actuator = 8;
 
 int frequency_dji = 500;
-int resolution_dji = 8; //max is 255
-// int resolution_dji = 16; //max is 65535
-
-
-double Initial_Yaw=0;
-double Old_Yaw, Yaw =0, Yaw_difference =0;
-double Initial_Pitch=0;
-double Old_Pitch, Pitch = 0, Pitch_difference = 0;
-unsigned long current_millis;
-
-bool Grip_Close1=true;
-bool Grip_Close2=true;
-
-
-
-int Robot_dir;
-int Motor_dir[4];
-
-float Magnitude_L, Angle_L;
-float Magnitude_R, Angle_R;
-
-
-int pulse_M[4];
-int default_M[4]= {MOTOR1_STARTING,MOTOR2_STARTING,MOTOR3_STARTING,MOTOR4_STARTING};
+int resolution_dji = 8; //max is 255 bits
 
 char input;
 
 int angle_count = 0;
 int angle_count2 = 0;
 
-float rpm = 0;
 
-int DJI_Increase_Speed=0;
-double Target_Yaw=0;
-double Extra_Target_Yaw =0;
-double Target_Pitch = 0;
-int Pole_Distance = 0;
-
-bool Fkipsky_Chg_Spd=false;
-bool Left_Pressed = false;
-bool Right_Pressed = false;
-bool L1_Pressed = false;
-bool L2_Pressed = false;
-bool R1_Pressed = false;
-bool R2_Pressed = false;
-bool Circle_Pressed = false;
-bool Square_Pressed = false;
-bool Touchpad_Pressed = false;
-//bool Square_Pressed = false;
-bool Options_Pressed = false;
-bool Share_Pressed = false;
-bool Cross_Pressed = false;
-
-
-bool Grip_Servo1 = false;
-bool Grip_Servo2 = false;
-bool Grip_Servo3 = false;
-
-bool Auto_Aim;
-bool Lidar_Aim_Adjustment = false;
-bool Pitch_Adjustment = false;
-bool Yaw_Adjustment = false;
-bool Extra_Yaw_Adjustment = false;
-bool Switching_Mode = false;
-bool Aiming_Mode = false;
-bool Right_Keyence_1 =false;
-bool Right_Keyence_2 =false;
-bool Position_Reached = false;
-bool Aiming_Pole_4;
-bool Aiming_Pole_5;
-bool Aiming_Pole_6;
-bool Aiming_Pole_7;
-bool Aiming_Pole_8;
-
-bool Waiting;
-
-
-char Lidar_signal;
-
-int Lidar_Distance;
 
 Servo myservo1;
 Servo myservo2;
