@@ -26,12 +26,30 @@
                 //$current_time_database = $current_time->format("Y-m-d H:i:s");
                 //QR end time
 
-                if($row['uid'] == $uid) {
-                    $sql_update = "update rfid_user set last_used = '".$temp_date."' where uid = '".$uid."' ";
+                if($row['uid'] == $uid || $row['uid'] == $uid && $row['status'] == "exit") {
                     //allow entry
                     echo 1;
+                    $status = "entry";
+                    $sql_update = "update rfid_user set last_used = '".$temp_date."' and status = '".$status."'
+                    where uid = '".$uid."' ";
+                    if($conn->query($sql_update)) {
+                        $sql_log = "insert into rfid_log (uid, entry_date) values
+                        ('".$uid."', '".$temp_date."')";
+                        $conn->query($sql_log);
+                    }
                 }
-                elseif($row['uid'] == $uid) {
+                elseif($row['uid'] == $uid && $row['status'] == "entry") {
+                    //allow exit
+                    echo 4;
+                    $status = "exit";
+                    $sql_update = "update rfid_user set last_used = '".$temp_date."' and status = '".$status."'
+                    where uid = '".$uid."' ";
+                    if($conn->query($sql_update)) {
+                        $sql_log = "update rfid_log set exit_date = '".$temp_date."' where uid = '".$uid."' ";
+                        $conn->query($sql_log);
+                    }
+                }
+                elseif($row['uid'] != $uid) {
                     //allow entry
                     echo 0;
                 }
