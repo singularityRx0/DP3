@@ -30,11 +30,12 @@
                     //allow entry
                     echo 1;
                     $status = "entry";
+                    $status_log = "open";
                     $sql_update = "update rfid_user set last_used = '".$temp_date."' and status = '".$status."'
                     where uid = '".$uid."' ";
                     if($conn->query($sql_update)) {
-                        $sql_log = "insert into rfid_log (uid, entry_date) values
-                        ('".$uid."', '".$temp_date."')";
+                        $sql_log = "insert into rfid_log (uid, entry_date, status_log) values
+                        ('".$uid."', '".$temp_date."', '".$status_log."')";
                         $conn->query($sql_log);
                     }
                 }
@@ -42,10 +43,12 @@
                     //allow exit
                     echo 4;
                     $status = "exit";
+                    $status_log = "closed";
                     $sql_update = "update rfid_user set last_used = '".$temp_date."' and status = '".$status."'
                     where uid = '".$uid."' ";
                     if($conn->query($sql_update)) {
-                        $sql_log = "update rfid_log set exit_date = '".$temp_date."' where uid = '".$uid."' ";
+                        $sql_log = "update rfid_log set exit_date = '".$temp_date."' , status_log = '".$status_log."' where 
+                        uid = '".$uid."' and status_log = '"."open"."' ";
                         $conn->query($sql_log);
                     }
                 }
