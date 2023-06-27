@@ -44,7 +44,6 @@
                 }
                 elseif($row['entry_date'] != "0000-00-00 00:00:00" && $row['exit_date'] != "0000-00-00 00:00:00") {
                     echo 3;
-                    $conn->close();
                 }
             }
 
