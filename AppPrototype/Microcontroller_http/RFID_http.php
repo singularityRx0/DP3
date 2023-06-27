@@ -41,7 +41,7 @@
                 }
                 elseif($row['uid'] == $uid && $row['status'] == "entry") {
                     //allow exit
-                    echo 4;
+                    echo 2;
                     $status = "exit";
                     $status_log = "closed";
                     $sql_update = "update rfid_user set last_used = '".$temp_date."' and status = '".$status."'
@@ -52,14 +52,10 @@
                         $conn->query($sql_log);
                     }
                 }
-                elseif($row['uid'] != $uid) {
-                    //allow entry
-                    echo 0;
-                }
             }
             else
             //UID does not exist
-            echo 2;
+            echo 0;
         }
         else
         //device id not the same 
