@@ -68,21 +68,23 @@
                 }
                 elseif ($remain_day < 0 && $remain_hour < 0 && $remain_min < 0 && $remain_sec < 0) {
                 //QR code expired
-                $status = "Expired";
-                $sql_update = "update qr_validity set status = '".$status."' 
-                where QR_id = '".$QR_id."' and start_date = '".$start_date."' and end_date = '".$end_date."' ";
-                $conn->query($sql_update);
-                echo 2;
-                    
-                    if ($row['counter'] == 1 && $row['status'] == "Used-Entry"){
+                    if ($row['counter']== 0) {
+                        $status = "Expired";
+                        $sql_update = "update qr_validity set status = '".$status."' 
+                        where QR_id = '".$QR_id."' and start_date = '".$start_date."' and end_date = '".$end_date."' ";
+                        $conn->query($sql_update);
+                        echo 2;
+                    }
+
+                    elseif ($row['counter'] == 1 && $row['status'] == "Used-Entry"){
                         //Allow exit
-                        echo 5;
                         $status = "Used-Exit";
                         $sql_update = "update qr_validity set status = '".$status."' , used_by = '".$temp_date."'
                         where QR_id = '".$QR_id."' and start_date = '".$start_date."' and end_date = '".$end_date."' ";
                         $conn->query($sql_update);
-                    }                 
-                    
+                        echo 5;
+                    }
+
                 }
             }
             else
